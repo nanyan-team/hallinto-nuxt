@@ -1,4 +1,32 @@
-# hallinto-nuxt
+# Project Hallinto Nuxt
+
+> **NOTE :** This is a Typescript Project.
+>
+> You need to utilize the all the Typescript's advantages.
+
+---
+
+## Tech Stack
+
+```bash
+# NodeJS version
+$ node -v
+v14.15.0
+
+# NPM version
+$ npm -v
+6.14.10
+```
+
+### Core Libraries
+
+- Firebase
+- Vuetify.js
+- Validator
+- Vuex-ORM
+- Currency.js
+
+---
 
 ## Build Setup
 
@@ -9,12 +37,12 @@ $ npm install
 # serve with hot reload at localhost:3000
 $ npm run dev
 
-# build for production and launch server
+# generate static project (RECOMMENDED FOR THIS PROJECT)
+$ npm run generate
+
+# build for production and launch server (NOT RECOMMENDED FOR THIS PROJECT)
 $ npm run build
 $ npm run start
-
-# generate static project
-$ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

@@ -65,9 +65,9 @@ export default class PagesIndex extends Vue {
     value: '',
     rules: [
       (v: string) => !!v || 'Password is required!',
-      (v: string) => v.length < 6 || 'Password must be at least 6 characters.',
+      (v: string) => v.length > 5 || 'Password must be at least 6 characters.',
       (v: string) =>
-        v.length > 20 || 'Password must not be longer than 20 characters.',
+        v.length < 21 || 'Password must not be longer than 20 characters.',
     ],
   }
 
