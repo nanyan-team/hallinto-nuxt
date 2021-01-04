@@ -28,6 +28,12 @@ $ npm -v
 
 ---
 
+## Prepare Setup
+
+- Copy `config.example.ts` file in project root
+- Rename the copied filed to `config.ts`
+- Add the config as you need in your local and continue to `Build Setup`.
+
 ## Build Setup
 
 ```bash
