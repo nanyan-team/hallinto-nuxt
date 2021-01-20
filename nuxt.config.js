@@ -26,6 +26,7 @@ export default {
     '@nuxt/typescript-build',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/vuetify',
+    '@nuxtjs/composition-api',
   ],
 
   modules: [],
@@ -56,6 +57,10 @@ export default {
         },
       },
     },
+  },
+
+  generate: {
+    interval: 2000,
   },
 
   build: {},
