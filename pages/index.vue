@@ -14,6 +14,7 @@
           label="Email"
           :rules="email.rules"
           type="email"
+          outlined
           required
         />
         <v-text-field
@@ -21,6 +22,7 @@
           label="Password"
           :rules="password.rules"
           type="password"
+          outlined
           required
         />
         <v-btn

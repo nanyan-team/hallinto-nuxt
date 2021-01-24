@@ -5,7 +5,7 @@ export default class User extends Model {
 
   static fields() {
     return {
-      id: this.uid(),
+      id: this.string(''),
       name: this.string(null).nullable(),
       email: this.string(null).nullable(),
       password: this.string(null).nullable(),

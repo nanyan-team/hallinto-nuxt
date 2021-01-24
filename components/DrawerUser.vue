@@ -37,12 +37,17 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { auth } from '@/lib/business-layer'
 
+const user = {
+  displayName: '',
+  email: '',
+}
+
 @Component
 export default class UserDrawer extends Vue {
   menu = false
 
   get user() {
-    return auth.getCurrentUser()
+    return auth.getCurrentUser() || user
   }
 
   logout() {

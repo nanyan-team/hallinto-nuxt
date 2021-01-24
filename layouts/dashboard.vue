@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <app-bar @nav-icon-click="isDrawerShowing = !isDrawerShowing" />
-    <drawer :is-drawer-showing="isDrawerShowing" />
+    <drawer :is-drawer-showing.sync="isDrawerShowing" />
     <v-main>
       <nuxt />
     </v-main>
@@ -20,6 +20,6 @@ import Drawer from './_partials/Drawer.vue'
   },
 })
 export default class DashboardLayout extends Vue {
-  isDrawerShowing = true
+  isDrawerShowing = false
 }
 </script>

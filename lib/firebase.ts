@@ -6,7 +6,8 @@ import 'firebase/firestore'
 import 'firebase/analytics'
 
 !firebase.apps.length && firebase.initializeApp(configs.firebaseConfig)
-firebase.analytics()
+// TODO: enable analytics in production
+// firebase.analytics()
 
 export const _firebase = firebase
 export const fireAuth = firebase.auth()
