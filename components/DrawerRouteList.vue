@@ -50,6 +50,16 @@ export default class DrawerRouteList extends Vue {
         { title: 'Deals', icon: 'mdi-handshake', path: '/deals' },
       ],
     },
+    {
+      section: 'Transactions',
+      routes: [
+        {
+          title: 'Transaction Status',
+          icon: 'mdi-cash-100',
+          path: '/transaction_status',
+        },
+      ],
+    },
   ]
 }
 </script>
