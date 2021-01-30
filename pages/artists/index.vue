@@ -10,25 +10,35 @@
         show-expand
         item-key="name"
       >
-        <template #top>
-          <v-btn @click="editing = !editing">
-            {{ editing ? 'Cancel Edit' : 'Edit' }}
-          </v-btn>
+        <template #[`item.imageUrl`]="{ item }">
+          <v-avatar>
+            <v-img
+              :src="item.imageUrl"
+              max-height="80"
+              max-width="80"
+              aspect-ratio="1/1"
+            >
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular
+                    indeterminate
+                    color="grey lighten-5"
+                  ></v-progress-circular>
+                </v-row>
+              </template>
+            </v-img>
+          </v-avatar>
         </template>
-        <template #[`item.name`]="{ item }">
-          <span v-if="!editing">{{ item.name }}</span>
-          <v-text-field
-            v-else
-            v-model="item.name"
-            outlined
-            dense
-            filled
-            hide-details="auto"
-          />
+        <template #[`item.actions`]="{ item }">
+          <v-btn icon link nuxt :to="`/artists/${item.id}`">
+            <v-icon small>mdi-pencil</v-icon>
+          </v-btn>
+          <v-btn icon @click="deleteItem(item)">
+            <v-icon small>mdi-delete</v-icon>
+          </v-btn>
         </template>
         <template #expanded-item="{ headers, item }">
           <td :colspan="headers.length">
-            <img :src="item.imageUrl" :alt="item.name" />
             {{ item.description }}
           </td>
         </template>
@@ -66,11 +76,11 @@ const dummyArtists = [
   layout: 'dashboard',
 })
 export default class PagesArtists extends Vue {
-  editing: boolean = false
   expanded: any[] = []
   headers = [
-    { text: 'No', value: 'id' },
+    { text: '', value: 'imageUrl' },
     { text: 'Name', value: 'name' },
+    { text: 'Actions', value: 'actions' },
   ]
 
   get artists() {

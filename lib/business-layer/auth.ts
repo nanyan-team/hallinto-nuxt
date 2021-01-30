@@ -37,6 +37,7 @@ export function signInWithEmailAndPassword(email: string, password: string) {
 export function onAuthStateChanged(cb: Function) {
   fireAuth.onAuthStateChanged((user) => cb(user))
 }
+
 /**
  * Sign In with Google using Redirect Function
  * @return redirect result promise
